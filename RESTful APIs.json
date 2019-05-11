@@ -1,0 +1,19 @@
+GET /api/users?page=<page>
+
+DELETE /api/users/<id>
+
+{id: 1, avatar: 'image1.png', , fist_name: 'John', last_name: 'Appleseed'}
+
+DELETE	
+Crud: Delete
+Entire Collection: 
+404 (Not Found), unless you want to delete the whole collection — use with caution.	
+Specific Item: 
+200 (OK). 404 (Not Found), if ID not found or invalid.
+
+GET	
+Crud: Read	
+Entire Collection: 
+200 (OK), list of users. Use pagination, sorting and filtering to navigate big lists.	
+Specific Item: 
+200 (OK), single user. 404 (Not Found), if ID not found or invalid.
