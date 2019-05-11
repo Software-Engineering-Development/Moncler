@@ -10,6 +10,33 @@
 ?>
 
 
+<?php
+
+ $rsPreloadImages = mysqli_query($mysqli, "SELECT * FROM `user_report`");
+
+  if (mysqli_num_rows($rsPreloadImages)>0)
+        {
+            $strPreload="'images/not_image.png'";
+
+            while ($imagePreload=mysqli_fetch_array($rsPreloadImages, MYSQLI_BOTH))
+            {
+                //$strPreload.=",'images/prodottiDetail/".$imagePreload['image_product']."'";
+                $strPreload.=",'images/".$imagePreload['avatar']."'";
+            }
+        }
+        else
+        {
+            $strPreload="'images/not_image.png'";
+        }
+
+
+    for ($i=1;$i<=$_SESSION['numColumn'];$i++)
+    {
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
@@ -55,13 +82,13 @@ div.col* {
     </thead>
     <tbody>
         <tr>
-            <td>Image 70x70</td>
+            <td><img class="imgProduct-profile_ad" src="images/<?php echo $strPreload; ?>"></td>
             <td>John</td>
             <td>Appleseed</td>
             <td>Delete</td>
         </tr>
         <tr>
-            <td>Image 70x70</td>
+            <td><img class="imgProduct-profile_ad" src="images/<?php echo $strPreload; ?>"></td>
             <td>Mario</td>
             <td>Rossi</td>
             <td>Delete</td>
